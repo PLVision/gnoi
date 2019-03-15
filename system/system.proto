@@ -82,6 +82,9 @@ service System {
 
   // TODO(hines): Add RotateCertificate workflow
   // TODO(hines): Add SetSSHPrivateKey
+	
+  // Version returns the current software version which is running on device.
+  rpc Version(VersionRequest) returns (VersionResponse) {}
 }
 
 message SwitchControlProcessorRequest {
@@ -307,4 +310,12 @@ message SetPackageRequest {
 
 
 message SetPackageResponse {
+}
+
+// A VersionRequest requests the current software version
+message VersionRequest {
+}
+
+message VersionResponse {
+  string version = 1;		  // Current software version.
 }
