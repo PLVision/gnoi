@@ -20,7 +20,7 @@ package gnoi.interface;
 
 import "github.com/openconfig/gnoi/types/types.proto";
 
-option (types.gnoi_version) = "0.1.0";
+// option (types.gnoi_version) = "0.1.0";
 
 service Interface {
   // SetLoopbackMode is used to set the mode of loopback on a interface.

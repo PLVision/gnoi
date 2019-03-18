@@ -21,7 +21,7 @@ package gnoi.file;
 import "github.com/openconfig/gnoi/types/types.proto";
 import "github.com/openconfig/gnoi/common/common.proto";
 
-option (types.gnoi_version) = "0.1.0";
+// option (types.gnoi_version) = "0.1.0";
 
 service File {
   // Get reads and streams the contents of a file from the target.
