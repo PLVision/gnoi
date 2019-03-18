@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-import "google/protobuf/descriptor.proto";
+// import "google/protobuf/descriptor.proto";
 
 package gnoi.types;
 
