@@ -18,7 +18,7 @@ syntax = "proto3";
 
 package gnoi.interface;
 
-import "types.proto";
+import "github.com/openconfig/gnoi/types.proto";
 
 // option (types.gnoi_version) = "0.1.0";
 
@@ -39,7 +39,8 @@ service Interface {
 // device, available modes are "none", "mac", "phy", "phy_remote",
 // "framer_facility", and "framer_terminal".
 message SetLoopbackModeRequest {
-  types.Path interface = 1;
+  // types.Path interface = 1;
+  gnoi.Path interface = 1;
   string mode = 2;
 }
 
@@ -47,7 +48,8 @@ message SetLoopbackModeResponse {
 }
 
 message GetLoopbackModeRequest {
-  types.Path interface = 1;
+  // types.Path interface = 1;
+  gnoi.Path interface = 1;
 }
 
 message GetLoopbackModeResponse {
@@ -55,7 +57,8 @@ message GetLoopbackModeResponse {
 }
 
 message ClearInterfaceCountersRequest {
-  repeated types.Path interface = 1;
+  // repeated types.Path interface = 1;
+  repeated gnoi.Path interface = 1;
 }
 
 message ClearInterfaceCountersResponse {

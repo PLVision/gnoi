@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-import "types.proto";
+// import "github.com/openconfig/gnoi/types.proto";
 
 package gnoi.bgp;
 

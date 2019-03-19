@@ -16,9 +16,9 @@
 
 syntax = "proto3";
 
-package gnoi.common;
+package gnoi;
 
-import "github.com/openconfig/gnoi/types/types.proto";
+import "github.com/openconfig/gnoi/types.proto";
 
 // RemoteDownload defines the details for a device to initiate a file transfer
 // from or to a remote location.
@@ -38,5 +38,6 @@ message RemoteDownload {
   }
   Protocol protocol = 2;
 
-  types.Credentials credentials = 3;
+ // types.Credentials credentials = 3;
+  gnoi.Credentials credentials = 3;
 }
