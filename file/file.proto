@@ -18,10 +18,10 @@ syntax = "proto3";
 
 package gnoi.file;
 
-import "github.com/openconfig/gnoi/types/types.proto";
-import "github.com/openconfig/gnoi/common/common.proto";
+import "github.com/openconfig/gnoi/types.proto";
+import "github.com/openconfig/gnoi/common.proto";
 
-option (types.gnoi_version) = "0.1.0";
+// option (types.gnoi_version) = "0.1.0";
 
 service File {
   // Get reads and streams the contents of a file from the target.
@@ -84,7 +84,8 @@ message PutRequest {
   oneof request {
     Details open = 1;
     bytes contents = 2;
-    types.HashType hash = 3; // hash of the file.
+    // types.HashType hash = 3; // hash of the file.
+    gnoi.HashType hash = 3;
   }
 }
 
@@ -102,7 +103,8 @@ message GetRequest {
 message GetResponse {
   oneof response {
     bytes contents = 1;
-    types.HashType hash = 2; // hash of the file.
+    // types.HashType hash = 2; // hash of the file.
+    gnoi.HashType hash = 2; // hash of the file.
   }
 }
 
@@ -113,12 +115,14 @@ message TransferToRemoteRequest {
   string local_path = 1;
 
   // Details to download the remote_file being requested to a remote location.
-  common.RemoteDownload remote_download = 2;
+  // common.RemoteDownload remote_download = 2;
+  gnoi.RemoteDownload remote_download = 2;
 }
 
 // A TransferToRemoteResponse contains the hash of the data transferred.
 message TransferToRemoteResponse {
-  types.HashType hash = 1; // hash of the file.
+  //types.HashType hash = 1; // hash of the file.
+  gnoi.HashType hash = 1; // hash of the file.
 }
 
 // StatRequest will list files at the provided path.
